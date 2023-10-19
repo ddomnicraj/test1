@@ -1,0 +1,27 @@
+name: Terraform initialization
+on: workflow_dispatch
+env:
+  ARM_CLIENT_ID: ebb5c0b7-b108-4f09-9cbb-ac8fedec0ea7
+  ARM_CLIENT_SECRET: rz58Q~5QEu13WWNFFhXui4ezR~tiY3bZG2.kJdqc
+  ARM_SUBSCRIPTION_ID: 36255ad7-db1e-4d3b-81cc-d6b30072eee6
+  ARM_TENANT_ID: ba2c3b37-5867-4630-8484-e171617286c4
+
+jobs:
+ terraform_init:
+  name: 'Terraform initialization'
+  runs-on: linux
+  steps:
+  - name: checkout repository
+    uses: actions/checkout@v3
+
+  - name: Terraform format
+    run: |
+     cd terraform
+	   terraform fmt -check -recursive
+    
+  - name: Terraform init
+    run: terraform init -input=false
+
+  - name: Terraform validate
+    run: terraform validate
+	

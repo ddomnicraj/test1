@@ -23,7 +23,9 @@ jobs:
      ls -ltrh
     
   - name: Terraform init
-    run: terraform init -input=false
+    run: | 
+      ls -ltrh
+      terraform init -input=false
 
   - name: Terraform validate
     run: terraform validate

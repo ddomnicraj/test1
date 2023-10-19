@@ -40,7 +40,7 @@ jobs:
       ls -ltrh
       pwd
       export exitcode=0
-      terraform plan -detailed-exitcode -out planfile || export exitcode=$?
+      terraform plan -input=false -detailed-exitcode -out planfile || export exitcode=$?
       echo "exitcode=$exitcode"        
       if [ $exitcode -eq 1 ]; then
       echo Terraform Plan Failed!

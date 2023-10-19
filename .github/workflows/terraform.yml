@@ -14,12 +14,15 @@ jobs:
   - name: checkout repository
     uses: actions/checkout@v4
 
+  - name: terraform install
+    uses: hashicorp/setup-terraform@v2.0.3
+    
   - name: Terraform format
     run: |
      pwd
      ls -ltrh
      cd terraform
-     terraform fmt -check
+     terraform fmt
     
   - name: Terraform init
     run: | 

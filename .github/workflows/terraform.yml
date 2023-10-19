@@ -19,12 +19,13 @@ jobs:
      pwd
      ls -ltrh
      cd terraform
-     terraform fmt -help
-     ls -ltrh
+     terraform fmt -check
     
   - name: Terraform init
     run: | 
-      ls -ltrh
+      ls -l
+      cd terraform
+      ls -l
       terraform init -input=false
 
   - name: Terraform validate

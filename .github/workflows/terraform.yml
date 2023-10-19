@@ -41,7 +41,7 @@ jobs:
   steps:
   - name: Terraform plan
     run: |
-      cd terraform
+      ls -l
       export exitcode=0
       terraform plan -detailed-exitcode -out planfile || export exitcode=$?
       echo "exitcode=$exitcode"        

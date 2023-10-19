@@ -12,12 +12,15 @@ jobs:
   runs-on: ubuntu-latest
   steps:
   - name: checkout repository
-    uses: actions/checkout@v3
+    uses: actions/checkout@v4
 
   - name: Terraform format
     run: |
      pwd
+     ls -ltrh
+     cd terraform
      terraform fmt -help
+     ls -ltrh
     
   - name: Terraform init
     run: terraform init -input=false

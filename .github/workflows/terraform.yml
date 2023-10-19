@@ -35,13 +35,15 @@ jobs:
     run: terraform validate
 
  terraform_plan:
+  
   name: 'Terraform Plan'
   runs-on: ubuntu-latest
   needs: [terraform_init]
   steps:
   - name: Terraform plan
     run: |
-      ls -l
+      ls -ltrh
+      pwd
       export exitcode=0
       terraform plan -detailed-exitcode -out planfile || export exitcode=$?
       echo "exitcode=$exitcode"        

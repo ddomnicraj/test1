@@ -17,7 +17,7 @@ jobs:
   - name: Terraform format
     run: |
      cd terraform
-	   terraform fmt -check -recursive
+     terraform fmt -check -recursive
     
   - name: Terraform init
     run: terraform init -input=false

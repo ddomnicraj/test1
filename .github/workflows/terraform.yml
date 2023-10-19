@@ -9,7 +9,7 @@ env:
 jobs:
  terraform_init:
   name: 'Terraform initialization'
-  runs-on: linux
+  runs-on: ubuntu-latest
   steps:
   - name: checkout repository
     uses: actions/checkout@v3

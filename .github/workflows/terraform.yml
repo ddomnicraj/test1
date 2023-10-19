@@ -16,7 +16,7 @@ jobs:
 
   - name: Terraform format
     run: |
-     cd terraform
+     pwd
      terraform fmt -check -recursive
     
   - name: Terraform init

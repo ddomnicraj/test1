@@ -41,18 +41,18 @@ jobs:
   steps:
   - name: Terraform plan
     run: |
-	 export exitcode=0
-	 terraform plan -detailed-exitcode -out planfile || export exitcode=$?
-	 echo "exitcode=$exitcode"        
-     if [ $exitcode -eq 1 ]; then
-       echo Terraform Plan Failed!
-       exit 1
-     else 
-       exit 0
-     fi
+      export exitcode=0
+      terraform plan -detailed-exitcode -out planfile || export exitcode=$?
+      echo "exitcode=$exitcode"        
+      if [ $exitcode -eq 1 ]; then
+      echo Terraform Plan Failed!
+      exit 1
+      else 
+      exit 0
+      fi
   
   - name: Publish Terraform Plan
-     uses: actions/upload-artifact@v3
-     with:
+    uses: actions/upload-artifact@v3
+    with:
       name: planfile
-      path: planfile 
+      path: planfile

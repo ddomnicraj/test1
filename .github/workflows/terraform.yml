@@ -25,7 +25,7 @@ jobs:
  terraform_format:
   name: 'Terraform format'
   runs-on: ubuntu-latest
-  needs: [terraform_install]
+  needs: [checkout,terraform_install]
   steps:  
   - name: Terraform format
     run: |
@@ -37,7 +37,7 @@ jobs:
  terraform_init:
   name: 'Terraform init'
   runs-on: ubuntu-latest
-  needs: [terraform_format]
+  needs: [checkout,terraform_format]
   steps:     
   - name: Terraform init
     run: | 

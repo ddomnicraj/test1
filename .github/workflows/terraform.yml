@@ -8,7 +8,7 @@ env:
   TF_LOG: TRACE
 jobs:
  checkout:
-  name: 'Terraform initialization'
+  name: 'Terraform checkout'
   runs-on: ubuntu-latest
   steps:
   - name: checkout repository

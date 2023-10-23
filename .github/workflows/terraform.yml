@@ -33,7 +33,12 @@ jobs:
      ls -ltrh
      cd terraform
      terraform fmt
-    
+
+ terraform_init:
+  name: 'Terraform init'
+  runs-on: ubuntu-latest
+  needs: [terraform_format]
+  steps:     
   - name: Terraform init
     run: | 
       ls -l
@@ -41,6 +46,11 @@ jobs:
       ls -l
       terraform init -input=false
 
+ terraform_validate:
+  name: 'Terraform validate'
+  runs-on: ubuntu-latest
+  needs: [terraform_init]
+  steps:
   - name: Terraform validate
     run: terraform validate
     

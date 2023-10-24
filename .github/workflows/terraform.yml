@@ -67,3 +67,19 @@ jobs:
     with:
       name: planfile
       path: planfile
+
+ build-app:
+    name: Build Application
+    runs-on: ubuntu-latest
+  
+ deploy-prod:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+
+ notify-team:
+    name: Notify Team
+    runs-on: ubuntu-latest
+
+ cleanup-resources:
+    name: Cleanup Resources
+    runs-on: ubuntu-latest

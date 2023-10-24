@@ -27,25 +27,24 @@ jobs:
   - name: terraform install
     uses: hashicorp/setup-terraform@v2.0.3
 
-  - working-directory: ${{env.working-directory}}
-    run: ls -la
+  - run: ls -la
   
   - name: Terraform format
-    working-directory: ${{env.working-directory}}
+    #working-directory: ${{env.working-directory}}
     run: |
      pwd
      ls -la
      terraform fmt
     
   - name: Terraform init
-    working-directory: ${{env.working-directory}}
+    #working-directory: ${{env.working-directory}}
     run: |
      pwd
      terraform init -input=false
     
   - name: Terraform validate
     run: terraform validate
-    working-directory: ${{env.working-directory}}
+    #working-directory: ${{env.working-directory}}
     
  terraform_plan:
   name: 'Terraform Plan (publish)'

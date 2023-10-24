@@ -8,6 +8,7 @@ env:
   TF_LOG: TRACE
 jobs:
  terraform_init:
+  name: 'Terraform initialization (format,init,validate)'
   runs-on: ubuntu-latest
   steps:
   - name: checkout repository
@@ -32,7 +33,12 @@ jobs:
 
   - name: Terraform validate
     run: terraform validate
-    
+
+ terraform_plan:
+  name: 'Terraform Plan (publish)'
+  needs: terraform_init
+  runs-on: ubuntu-latest
+  steps:   
   - name: Terraform plan
     run: |
       cd terraform

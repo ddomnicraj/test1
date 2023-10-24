@@ -24,8 +24,8 @@ jobs:
   env:
    working-directory: ./terraform
   steps:
-  - name: terraform install
-    uses: hashicorp/setup-terraform@v2.0.3
+  #- name: terraform install
+    #uses: hashicorp/setup-terraform@v2.0.3
 
   - run: ls -la
   

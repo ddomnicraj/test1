@@ -14,6 +14,7 @@ jobs:
   steps:
   - name: checkout repository
     uses: actions/checkout@v4
+  - run: pwd
     
  terraform_init:
   name: "Terraform initialization(format,init,validate)"
@@ -22,13 +23,19 @@ jobs:
   steps:
   - name: terraform install
     uses: hashicorp/setup-terraform@v2.0.3
-    
+
+  - run: pwd
+  
   - name: Terraform format
-    run: terraform fmt
     working-directory: ${{env.working-directory}}
+    run: |
+     pwd
+     terraform fmt
     
   - name: Terraform init
-    run: terraform init -input=false
+    run: |
+     pwd
+     terraform init -input=false
     working-directory: ${{env.working-directory}}
     
   - name: Terraform validate

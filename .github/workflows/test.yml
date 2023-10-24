@@ -1,4 +1,4 @@
-name: Terraform initialization
+name: Terraform Workflow
 on: workflow_dispatch
 env:
   ARM_CLIENT_ID: ebb5c0b7-b108-4f09-9cbb-ac8fedec0ea7

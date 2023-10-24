@@ -6,7 +6,7 @@ env:
   ARM_SUBSCRIPTION_ID: 36255ad7-db1e-4d3b-81cc-d6b30072eee6
   ARM_TENANT_ID: ba2c3b37-5867-4630-8484-e171617286c4
   TF_LOG: TRACE
-  working-directory: terraform
+  working-directory: /home/runner/work/test1/test1/terraform
 jobs:
  checkout:
   name: 'checkout'

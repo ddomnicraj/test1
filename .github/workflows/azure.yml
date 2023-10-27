@@ -13,4 +13,4 @@ jobs:
   runs-on: ubuntu-latest
   steps:
   - name: Log in to azure
-    run: az login --service-principal --username "f82ab948-a5fc-46bd-bc55-8bf0d86b4f39" --password "a9855234-0c4e-4945-8a6d-abe2105f9e50" --tenant "ba2c3b37-5867-4630-8484-e171617286c4" || exit 1
+    run: az login --service-principal --username "f82ab948-a5fc-46bd-bc55-8bf0d86b4f39" --password "lkH8Q~tG3KduKGRXkC4V~g4emEQWHie9wEmjYaDT" --tenant "ba2c3b37-5867-4630-8484-e171617286c4" || exit 1

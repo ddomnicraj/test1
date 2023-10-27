@@ -1,0 +1,18 @@
+name: Terraform Workflow
+on: workflow_dispatch
+env:
+  ARM_CLIENT_ID: ebb5c0b7-b108-4f09-9cbb-ac8fedec0ea7
+  ARM_CLIENT_SECRET: rz58Q~5QEu13WWNFFhXui4ezR~tiY3bZG2.kJdqc
+  ARM_SUBSCRIPTION_ID: 36255ad7-db1e-4d3b-81cc-d6b30072eee6
+  ARM_TENANT_ID: ba2c3b37-5867-4630-8484-e171617286c4
+  TF_LOG: TRACE
+  working-directory: ./terraform
+jobs:
+ checkout:
+  name: 'azure login'
+  runs-on: ubuntu-latest
+  steps:
+  - name: Log in to azure
+    uses: Azure/login@v1
+    with:
+      creds: '{"clientId":"${{ f82ab948-a5fc-46bd-bc55-8bf0d86b4f39 }}","clientSecret":"${{ a9855234-0c4e-4945-8a6d-abe2105f9e50 }}","subscriptionId":"${{ 36255ad7-db1e-4d3b-81cc-d6b30072eee6 }}","tenantId":"${{ ba2c3b37-5867-4630-8484-e171617286c4 }}"}'

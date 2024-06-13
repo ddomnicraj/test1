@@ -28,7 +28,8 @@ jobs:
   - name: terraform install
     uses: hashicorp/setup-terraform@v2.0.3
 
-  - run: ls -la
+  - working-directory: ${{env.working-directory}}
+    run: ls -la
   
   - name: Terraform format
     working-directory: ${{env.working-directory}}

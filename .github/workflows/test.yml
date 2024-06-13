@@ -6,13 +6,13 @@ env:
   ARM_SUBSCRIPTION_ID: 36255ad7-db1e-4d3b-81cc-d6b30072eee6
   ARM_TENANT_ID: ba2c3b37-5867-4630-8484-e171617286c4
   TF_LOG: TRACE
-  working-directory: ./terraform
 jobs:
  checkout:
   name: 'checkout'
   runs-on: ubuntu-latest
   steps:
-  
+  - name: checkout repository
+    uses: actions/checkout@v4
   - run: | 
      pwd
      ls -la
@@ -21,32 +21,31 @@ jobs:
   name: "Terraform initialization(format,init,validate)"
   runs-on: ubuntu-latest
   needs: checkout
+  env:
+   working-directory: ./terraform
   steps:
-  - name: checkout repository
-    uses: actions/checkout@v4
-    
-  - name: terraform install
-    uses: hashicorp/setup-terraform@v2.0.3
+  #- name: terraform install
+    #uses: hashicorp/setup-terraform@v2.0.3
 
   - working-directory: ${{env.working-directory}}
     run: ls -la
   
   - name: Terraform format
-    working-directory: ${{env.working-directory}}
+    #working-directory: ${{env.working-directory}}
     run: |
      pwd
      ls -la
      terraform fmt
     
   - name: Terraform init
-    working-directory: ${{env.working-directory}}
+    #working-directory: ${{env.working-directory}}
     run: |
      pwd
      terraform init -input=false
     
   - name: Terraform validate
     run: terraform validate
-    working-directory: ${{env.working-directory}}
+    #working-directory: ${{env.working-directory}}
     
  terraform_plan:
   name: 'Terraform Plan (publish)'
